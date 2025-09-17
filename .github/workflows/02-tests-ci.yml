@@ -28,7 +28,7 @@ jobs:
       - name: "Instalar Deps"
         run: npm ci
 
-      - name: "Executar tests"
+      - name: "Executar testes"
         run: npm run tests
 
       - name: "Extrair porcentagem de cobertura" # Esse step será validado pelo desafio, não altere o nome. No final, ele deve gerar o output "coverage" com a porcentagem de cobertura.
@@ -38,7 +38,7 @@ jobs:
           echo "Coverage: $COVERAGE%"
           echo "coverage=$COVERAGE" >> $GITHUB_OUTPUT
 
-      - name: "Validar testes"
+      - name: "Validar os testes"
         if: ${{ steps.coverage.outputs.coverage < env.COVERAGE_MIN}}
         run: |
           echo "Cobertura não atendida: Esperado - ${{ env.COVERAGE_MIN }}. Atigindo: ${{ steps.coverage.outputs.coverage }}"
