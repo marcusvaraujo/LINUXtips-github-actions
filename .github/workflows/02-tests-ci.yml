@@ -28,7 +28,7 @@ jobs:
       - name: "Instalar Deps"
         run: npm ci
 
-      - name: "Executar tests"
+      - name: "Executar testes"
         run: npm run tests
 
       - name: "Extrair porcentagem de cobertura" # Esse step será validado pelo desafio, não altere o nome. No final, ele deve gerar o output "coverage" com a porcentagem de cobertura.
